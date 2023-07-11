@@ -1,0 +1,3 @@
+kern=$1/arch/arm/boot/zImage
+qemu-system-arm -cpu cortex-a7 -m 128 -M virt,kernel=$kern,initrd=initrd.cpio -netdev user,id=X -device virtio-net-device,netdev=X
+
