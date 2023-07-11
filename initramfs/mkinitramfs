@@ -1,0 +1,4 @@
+#!/bin/sh
+mkdir bin sbin usr usr/bin usr/sbin proc sys tmp dev
+find|grep -v mkinitramfs|cpio -H newc -o > ../initrd.cpio
+

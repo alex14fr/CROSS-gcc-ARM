@@ -1,0 +1,10 @@
+#!/busybox sh
+
+/busybox --install
+mount -t proc none /proc
+mount -t sysfs none /sys
+ifconfig eth0 10.0.2.15 up
+while [ true ]; do
+	setsid -c sh
+done
+
