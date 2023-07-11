@@ -1,0 +1,6 @@
+cd objgcc/arm-linux-musleabihf/libgcc
+ln -s /opt/gcc-arm/include
+cd ../..
+make all-target-libgcc
+make install-target-libgcc
+

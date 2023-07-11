@@ -1,0 +1,7 @@
+
+[ -d objgcc ] || mkdir objgcc
+cd objgcc
+../gcc-*/configure --prefix=/opt/gcc-arm --enable-languages=c --enable-default-pie --disable-nls --target=arm-linux-musleabihf --build=x86_64-alpine-linux-musl --host=x86_64-alpine-linux-musl --with-static-standard-libraries --with-float=hard --disable-multilib
+make -j8 all-gcc
+make install-gcc
+

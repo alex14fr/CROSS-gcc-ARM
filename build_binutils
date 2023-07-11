@@ -1,0 +1,5 @@
+set -x
+cd binutils-*
+./configure --prefix=/opt/gcc-arm --target=arm-linux-musleabihf --disable-nls
+make -j8
+make install-strip
