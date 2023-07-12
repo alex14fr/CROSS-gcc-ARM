@@ -1,6 +1,7 @@
 [ -f busybox-1.36.1.tar.bz2 ] || wget https://busybox.net/downloads/busybox-1.36.1.tar.bz2
 tar xf busybox-1.36.1.tar.bz2
 cd busybox-*
+make clean
 make CROSS_COMPILE=arm-linux-musleabihf- menuconfig
-make CROSS_COMPILE=arm-linux-musleabihf- V=1 LDLIBS=""
+make CROSS_COMPILE=arm-linux-musleabihf- V=1 LDLIBS="" CFLAGS="-mcpu=cortex-a7 -Os -mthumb"
 

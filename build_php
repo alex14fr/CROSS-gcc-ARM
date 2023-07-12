@@ -2,6 +2,7 @@ wget
 tar xf php-8.2.7.tar.xz
 cd php-*
 sed -i s/off64_t/off_t/g main/streams/cast.c
-./configure --disable-all --disable-opcache --disable-opcache-jit --host=arm-linux-musleabihf
+CFLAGS="-mcpu=cortex-a7 -mthumb -Os" ./configure --disable-all --disable-opcache --disable-opcache-jit --host=arm-linux-musleabihf
 make -j8
+arm-linux-musleabihf-strip sapi/cli/php
 
