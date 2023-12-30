@@ -1,0 +1,4 @@
+cd obj_gcc_gnu
+make -j4 all-target-libgcc
+doas make install-target-libgcc
+

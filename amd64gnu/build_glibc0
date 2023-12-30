@@ -1,0 +1,13 @@
+mkdir obj_glibc_gnu
+cd obj_glibc_gnu
+../glibc-2.38/configure --prefix=/opt/gcc-gnu/ --enable-kernel=6.1.0 --disable-profile --host=x86_64-pc-linux-gnu --with-headers=/opt/gcc-gnu/include/
+doas make install-headers
+make csu/subdir_lib
+doas install csu/crt1.o csu/crti.o csu/crtn.o /opt/gcc-gnu/lib
+doas install csu/crt1.o csu/crti.o csu/crtn.o /opt/gcc-gnu/x86_64-pc-linux-gnu/lib
+doas /opt/gcc-gnu/bin/x86_64-pc-linux-gnu-gcc -nostdlib -nostartfiles -shared -x c /dev/null -o /opt/gcc-gnu/lib/libc.so
+doas /opt/gcc-gnu/bin/x86_64-pc-linux-gnu-gcc -nostdlib -nostartfiles -shared -x c /dev/null -o /opt/gcc-gnu/x86_64-pc-linux-gnu/lib/libc.so
+doas touch /opt/gcc-gnu/include/gnu/stubs.h
+doas ln -s /opt/gcc-gnu/include /opt/gcc-gnu/x86_64-pc-linux-gnu/
+doas ln -s /opt/gcc-gnu/lib /opt/gcc-gnu/x86_64-pc-linux-gnu/
+
