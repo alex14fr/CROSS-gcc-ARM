@@ -1,10 +1,14 @@
 cd musl*
 make distclean
-./configure --prefix=/opt/gcc-arm --target=arm-linux-musleabihf --enable-debug --disable-shared
+./configure --prefix=/opt/gcc-arm/arm-linux-musleabihf --target=arm-linux-musleabihf --disable-shared
 make -j8
 make install
+exit 0
+
+
+
 cd /opt/gcc-arm/arm-linux*/lib
-for i in Scrt1.o crt1.o crti.o crtn.o libc.so libc.a; do
+for i in Scrt1.o crt1.o crti.o crtn.o libc.so libc.a libm.a libpthread.a libresolv.a libxnet.a libcrypt.a libdl.a libutil.a librt.a; do
 	ln -s ../../lib/$i
 done
 cd ..

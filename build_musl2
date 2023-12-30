@@ -1,6 +1,6 @@
 cd musl*
 make distclean
-./configure --prefix=/opt/gcc-arm --target=arm-linux-musleabihf --enable-debug 
+./configure --prefix=/opt/gcc-arm/arm-linux-musleabihf --target=arm-linux-musleabihf --enable-debug 
 make -j8
 make install
 

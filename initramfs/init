@@ -1,6 +1,6 @@
-#!/busybox sh
+#!/bin/busybox sh
 
-/busybox --install
+/bin/busybox --install
 mount -t proc none /proc
 mount -t sysfs none /sys
 ifconfig eth0 10.0.2.15 up
