@@ -1,0 +1,5 @@
+mkdir obj_glibc_gnu
+cd obj_glibc_gnu
+../glibc-2.38/configure --prefix=/opt/glibc --enable-kernel=6.1.0 --disable-profile --host=x86_64-pc-linux-gnu --with-headers=/opt/gcc-gnu/include/
+make -j8
+doas make install

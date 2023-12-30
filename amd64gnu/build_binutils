@@ -1,0 +1,6 @@
+set -x
+mkdir obj_binutils_gnu
+cd obj_binutils_gnu
+../binutils-2.41/configure --prefix=/opt/gcc-gnu --target=x86_64-pc-linux-gnu --disable-nls --disable-gprofng
+make -j8
+doas make install-strip

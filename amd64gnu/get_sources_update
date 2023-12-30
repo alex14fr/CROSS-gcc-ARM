@@ -1,0 +1,6 @@
+wget http://mirror.koddos.net/gcc/releases/gcc-13.2.0/gcc-13.2.0.tar.xz https://ftp.gnu.org/gnu/binutils/binutils-2.41.tar.xz 
+tar xf gcc-13.2.0.tar.xz
+tar xf binutils-2.41.tar.xz
+cd gcc-13.2.0
+sh contrib/download_prerequisites
+

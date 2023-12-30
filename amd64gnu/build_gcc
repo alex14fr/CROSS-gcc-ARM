@@ -1,0 +1,6 @@
+mkdir obj_gcc_gnu
+cd obj_gcc_gnu
+../gcc-13.2.0/configure --prefix=/opt/gcc-gnu --enable-languages=c --enable-default-pie --disable-nls --target=x86_64-pc-linux-gnu --build=x86_64-alpine-linux-musl --host=x86_64-alpine-linux-musl --with-static-standard-libraries --disable-multilib
+make -j8
+doas make install-gcc
+
